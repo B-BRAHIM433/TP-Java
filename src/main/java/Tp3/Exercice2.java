@@ -10,15 +10,16 @@ public class Exercice2 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int X, N, res, i;
-        System.out.println("Entrer X");
-        X = scanner.nextInt();
-        System.out.println("Entrer N");
-        N = scanner.nextInt();
-        res = X;
-        for (i = 1; i < N; i++) {
-            res *= X;
+        System.out.println(" declarer un tableau de 10 éléments :");
+        int[] tableau = new int[10];
+        for (int i = 0; i < tableau.length; i++) {
+            System.out.print("Entrer l'element " + (i + 1) + ": ");
+            tableau[i] = scanner.nextInt();
         }
-        System.out.println("Par multiplication succ : " + X + "^" + N + "=" + res);
+        // Affichage
+        System.out.println("les elements du tableau :");
+        for (int i : tableau) {
+            System.out.println(i);
+        }
     }
 }

@@ -10,27 +10,33 @@ public class Exercice5 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Entrer  n : ");
-        int n, i, res;
-        n = scanner.nextInt();
-        i = 1;
-        res = 1;
-        if (n == 0) {
-            res = 1;
-        } else {
-
-            //avec boucle while 
-            while (i <= n) {
-                res *= i;
-                i++;
-            }
-
-            //avec boucle for
-            for (i = 1; i <= n; i++) {
-                res *= i;
-            }
+        System.out.println(" declarer la taille de tableau:");
+        int N = scanner.nextInt();
+        int[] T = new int[N];
+        //Remplissage
+        for (int i = 0; i < T.length; i++) {
+            System.out.print("Entrer l'element " + (i + 1) + ": ");
+            T[i] = scanner.nextInt();
+        }
+        // Affichage
+        System.out.println("les elements du tableau :");
+        for (int i : T) {
+            System.out.println(i);
+        }
+        int debut = 0;
+        int fin = T.length - 1;
+        //Rangement inverse
+        while (debut < fin) {
+            int temp = T[debut];
+            T[debut] = T[fin];
+            T[fin] = temp;
+            debut++;
+            fin--;
+        }
+        System.out.println("\n\n les elements du tableau inverser :");
+        for (int i : T) {
+            System.out.println(i);
         }
 
-        System.out.println(n + "!=" + res);
     }
 }

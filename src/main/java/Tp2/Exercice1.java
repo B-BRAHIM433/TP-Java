@@ -4,32 +4,48 @@ import java.util.Scanner;
 
 /**
  *
- * @author hp
+ * @author B-BAYCHOU
  */
 public class Exercice1 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Entrer le nombre : ");
+        System.out.println("Entrer  le nombre des nombre que tu souhaite a entrer:");
         int N = scanner.nextInt();
-        int[] divs = new int[N];
-        int NbrDiv = 0;
-        int SumDiv = 0;
+        int i = 1;
+        float Nbr;
+        float Sum = 0;
+        float Prod = 1;
 
-        for (int i = 1; i <= N; i++) {
-            if (N % i == 0) {
-                divs[NbrDiv] = i;
-                NbrDiv++;
-                SumDiv += i;
-            }
+        //avec while
+        while (i <= N) {
+            System.out.println("Enterer le nombre num:" + i);
+            Nbr = scanner.nextFloat();
+            Sum += Nbr;
+            Prod *= Nbr;
+            i++;
         }
 
-        System.out.println("Le nombre des diviseurs est : " + NbrDiv);
-        System.out.println("La somme des diviseurs est : " + SumDiv);
-        for (int i : divs) {
-            if (i != 0) {
-                System.out.println(i);
-            }
+        //avec do while
+        do {
+            System.out.println("Enterer le nombre num:" + i);
+            Nbr = scanner.nextFloat();
+            Sum += Nbr;
+            Prod *= Nbr;
+            i++;
+        } while (i <= N);
+
+        //avec for
+        for (i = 1; i <= N; i++) {
+            System.out.println("Enterer le nombre num:" + i);
+            Nbr = scanner.nextFloat();
+            Sum += Nbr;
+            Prod *= Nbr;
+
         }
+
+        System.out.println("La some des nomnre entrer est " + Sum);
+        System.out.println("La Produit des nomnre entrer est " + Prod);
+        System.out.println("La moyenne des nomnre entrer est " + Sum / N);
     }
 }

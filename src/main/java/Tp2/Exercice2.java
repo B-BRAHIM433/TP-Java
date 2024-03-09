@@ -10,24 +10,15 @@ public class Exercice2 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Entrer l'heure [0,23]");
-        int heure;
-        int minute;
-        do {
-            heure = scanner.nextInt();
-        } while (heure > 24 || heure < 0);
-        System.out.println("Entrer la minute [0,59]");
-        do {
-            minute = scanner.nextInt();
-        } while (minute > 59 || minute < 0);
-        minute++;
-        if (heure == 23 && minute == 60) {
-            heure = 00;
+        int X, N, res, i;
+        System.out.println("Entrer X");
+        X = scanner.nextInt();
+        System.out.println("Entrer N");
+        N = scanner.nextInt();
+        res = X;
+        for (i = 1; i < N; i++) {
+            res *= X;
         }
-        if (minute == 60) {
-            minute = 00;
-        }
-
-        System.out.println("l'heure: "+heure + ":" + minute);
+        System.out.println("Par multiplication succ : " + X + "^" + N + "=" + res);
     }
 }
